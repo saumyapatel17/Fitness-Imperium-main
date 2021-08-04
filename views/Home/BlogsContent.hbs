@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Imperium | Blogs - AuthorName</title>
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/b64e0dbd33.js" crossorigin="anonymous"></script>
+
+    <!-- Css -->
+    <link rel="stylesheet" href="../../public/css/index.css">
+    <link rel="stylesheet" href="../../public/css/scrollbar.css">
+
+
+</head>
+
+<body>
+
+    <!-- Navbar Start -->
+    <div class='navbar'>
+        <a href="/">
+            <div class="navbar-brand">
+                <img src="../public/Images/logo.png" />
+                <span>Fitness Imperium</span>
+            </div>
+        </a>
+
+        <div class="navbar-items">
+
+            <ul>
+
+                <a href="/">
+                    <li class="active">
+                        Home
+                    </li>
+                </a>
+
+                <a href="/blogs">
+                    <li class="active">
+                        Blogs
+                    </li>
+                </a>
+                <a href="/centre">
+                    <li class="active">
+                        Centers
+                    </li>
+                </a>
+                <a href="/login">
+                    <li class="active">
+                        Login
+                    </li>
+                </a>
+                <a href="/register">
+                    <li class="active">
+                        Get Started
+                    </li>
+                </a>
+            </ul>
+            </ul>
+
+        </div>
+
+    </div>
+    <!-- Navbar Ends -->
+
+    <!-- Page Starts -->
+    <section id='page-name'>
+        <div class="page-name">
+            {{#each details}}
+            <div>
+                <h1>
+                    {{this.title}}
+                </h1>
+                <p>
+                    {{this.author}} &nbsp; {{this.date}}
+                </p>
+            </div>
+            
+            <!-- <div>
+                <h3>Worried of not having an account?</h3>
+                <a href="">
+                    <button class="btn">
+                    Get Started For Free
+                    </button>
+            </a>
+                
+            </div> -->
+
+        </div>
+    </section>
+    <section id='page-window'>
+        <div class="blogs-content-page">
+
+            <div class="blogs-content-grid">
+
+                <div class="blogs-content-display">
+
+                    <img src="../../uploads/Blogs/{{this.image}}" />
+                    <p>
+                        {{this.content}}
+                    </p>
+
+                </div>
+                {{/each}}
+
+                <div class="blogs-content-list">
+
+                    <h2>
+                        Latest Posts
+                    </h2>
+
+                    {{#each blogs}}
+                    <!-- Blogs List Item Starts -->
+                    <div class="blogs-list-card">
+                        <a href="/blogsdetails/{{this.blog_id}}" target="_blank">
+<img src="../../uploads/Blogs/{{this.image}}"/>
+                        </a>
+                        
+
+                        <div class="blogs-list-card-content">
+                            <a href="/blogsdetails/{{this.blog_id}}" target="_blank">
+                            <h3>
+                                {{this.title}}
+                            </h3>
+                            </a>
+                            <h6>Posted By {{this.author}}</h6>
+                            <h6>{{this.date}}</h6>
+                        </div>
+                    </div>
+                    <!-- Blogs List Item Ends -->
+                    {{/each}}
+                    
+                </div>
+
+            </div>
+
+
+        </div>
+    </section>
+    <!-- Page Ends -->
+
+    <!-- Footer Starts -->
+    <section id='footer'>
+        <div class="footer">
+            <div class="footer-content">
+                <div class="footer-handles">
+                    <a href="">
+                        <span class="fab fa-instagram"></span>
+                    </a>
+
+
+                    <a href="">
+                        <span class="fab fa-facebook"></span>
+                    </a>
+
+
+                    <a href="">
+                        <span class="fab fa-twitter"></span>
+                    </a>
+
+
+                    <a href="">
+                        <span class="fab fa-pinterest"></span>
+                    </a>
+
+
+                    <a href="">
+                        <span class="fab fa-google-plus-g"></span>
+                    </a>
+
+
+
+
+                </div>
+                <div class="footer-info">
+                    <h3><span class="far fa-copyright"></span> 2021 Fitness Imperium, All rights reserved.</h3>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+    <!-- Footer Ends -->
+
+    <script>
+        const navbar = document.querySelector('.navbar');
+        window.onscroll = () => {
+            if (window.scrollY > 367) {
+                navbar.classList.add('navbar-scroll');
+            }
+            else {
+                navbar.classList.remove('navbar-scroll');
+            }
+        };
+    </script>
+
+</body>
+
+</html>

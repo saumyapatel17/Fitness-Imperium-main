@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/public/css/style.css">
+  <link rel="stylesheet" href="/public/css/pages.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+  <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+
+</head>
+
+<body>
+
+  <!--wrap-sidebar start-->
+  <div class="wrap-sidebar">
+    <!--sidebar start-->
+    <div class="sidebar">
+      <div class="sidebar-menu">
+        <div class="sidebar-btn">
+          <i class="fas fa-bars" id="btn"></i>
+        </div>
+        <center class="profile">
+          <img src="1.jpg" alt="">
+        </center>
+        <br><br><br><br><br>
+        <div class="item">
+          <a href="/User/home">
+            <i class="fas fa-desktop"></i><span>Dashboard</span>
+          </a>
+        </div>
+        <div class="item" id="member">
+          <a href="#member" class="sub-btn">
+            <i class="fas fa-users"></i><span>Member <i class="fas fa-angle-right drop-down"></i></span>
+          </a>
+          <div class="sub-menu ">
+            <a href="/User/Member/Add_member"><i class="fas fa-user-plus"></i><span>Add Member</span></a>
+            <a href="/User/Member/View_member"><i class="fas fa-user-edit"></i><span>View Member</span></a>
+            <a href="/User/Member/Manage_subscription"><i class="fas fa-piggy-bank"></i><span>Memberships</span></a>
+          </div>
+        </div>
+        <div class="item" id="staff">
+          <a href="#staff" class="sub-btn">
+            <i class="fas fa-user-tie"></i><span>Staff <i class="fas fa-angle-right drop-down"></i></span>
+          </a>
+          <div class="sub-menu">
+            <a href="/User/Staff/Add_staff"><i class="fas fa-user-plus"></i><span>Add Staff</span></a>
+            <a href="/User/Staff/View_staff"><i class="fas fa-user-edit"></i><span>View Staff</span></a>
+            <a href="/User/Staff/View_salary"><i class="fas fa-wallet"></i><span>Salary</span></a>
+          </div>
+        </div>
+        <div class="item" id="attendance">
+          <a href="#attendance" class="sub-btn">
+            <i class="fas fa-calendar"></i><span>Attendance <i class="fas fa-angle-right drop-down"></i></span>
+          </a>
+          <div class="sub-menu active-now">
+            <a href="/User/Attendance/Mark_attendance"><i class="fas fa-calendar-check"></i><span>Mark
+                Attendance</span></a>
+            <a href="/User/Attendance/View_attendance" style="background: #3eca84; color:rgba(0, 0, 0)"><i
+                class="fas fa-calendar-day"></i><span>View Attendance</span></a>
+          </div>
+        </div>
+        <div class="item" id="inventory">
+          <a href="#inventory" class="sub-btn">
+            <i class="fas fa-dolly"></i><span>Inventory <i class="fas fa-angle-right drop-down"></i></span>
+          </a>
+          <div class="sub-menu">
+            <a href="/User/Inventory/Add_product"><i class="fas fa-people-carry"></i><span>Add Product</span></a>
+            <a href="/User/Inventory/View_product"><i class="fas fa-box-open"></i><span>View Product</span></a>
+          </div>
+        </div>
+        <div class="item" id="expense">
+          <a href="#expense" class="sub-btn">
+            <i class="fas fa-cash-register"></i><span>Expenses <i class="fas fa-angle-right drop-down"></i></span>
+          </a>
+          <div class="sub-menu">
+            <a href="/User/Expense/Add_expense"><i class="fas fa-donate"></i><span>Add Expense</span></a>
+            <a href="/User/Expense/View_expense"><i class="fas fa-file-invoice-dollar"></i><span>View
+                Expenses</span></a>
+          </div>
+        </div>
+        <div class="item">
+          <a href="../portfolio.hbs" class="sub-btn">
+            <i class="fas fa-portrait"></i><span>Portfolio</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!--sidebar end-->
+    <!--main container start-->
+    <div class="main-container">
+      <nav class="main-nav">
+        <div class="nav-left">
+          <div class="nav-logo">Fitness Imperium</div>
+        </div>
+        <div class="nav-right">
+          <ul>
+            <li>
+              <a href="/User/profile" title="Profile" target="_blank"><i class="fas fa-user-circle"></i>
+                <span class="sr-only">Profile</span></a>
+            </li>
+            <li>
+              <a href="/" title="Log Out" target="_blank"><i class="fas fa-power-off"></i>
+                <span class="sr-only">Log Out</span></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="main-content">
+        <div class="attendance">
+          <div class="attendance__container">
+            <div class="container-fluid py-4 mb-4">
+              {{#if info}}
+                                <div class="alert alert-primary">
+
+                                    <div>
+                                        <img src="/public/Images/Alert/info.svg" alt="" style="fill: currentColor;">
+                                        <span>{{info}}</span>
+                                    </div>
+                                    <span class="closebtn"
+                                        onclick="this.parentElement.style.display='none';">&times;</span>
+                                </div>
+                                {{/if}}
+                                {{#if warning}}
+                                <div class="alert alert-warning">
+
+                                    <div>
+                                        <img src="/public/Images/Alert/warning.svg" alt="" style="fill: currentColor;">
+                                        <span>{{warning}}</span>
+                                    </div>
+                                    <span class="closebtn"
+                                        onclick="this.parentElement.style.display='none';">&times;</span>
+                                </div>
+                                {{/if}}
+                                {{#if danger}}
+                                <div class="alert alert-danger">
+
+                                    <div>
+                                        <img src="/public/Images/Alert/danger.svg" alt="" style="fill: currentColor;">
+                                        <span>{{danger}}</span>
+                                    </div>
+                                    <span class="closebtn"
+                                        onclick="this.parentElement.style.display='none';">&times;</span>
+                                </div>
+                                {{/if}}
+                                {{#if success}}
+                                <div class="alert alert-success">
+
+                                    <div>
+                                        <img src="/public/Images/Alert/success.svg" alt="" style="fill: currentColor;">
+                                        <span>{{success}}</span>
+                                    </div>
+                                    <span class="closebtn"
+                                        onclick="this.parentElement.style.display='none';">&times;</span>
+                                </div>
+                                {{/if}}
+              <label for="togBtn" class="switch align-content-center">
+                <input type="checkbox" id="togBtn" onchange="mytoggle()">
+                <div class="slider round">
+                  <span class="Member-toggle">Member</span>
+                  <span class="Staff-toggle">Staff</span>
+                </div>
+              </label>
+              <div class="input-group mt-4 ">
+                <span class="input-group-text">
+                  <i class="fas fa-file-pdf"></i>
+                </span>
+                <input type="text" class="form-control" placeholder="Search" onkeyup="myFunction()" id="myInput">
+                <input type="date" class="form-control btn-primary" placeholder="Date Filter" id="date-select"
+                  style="display:none" onchange="handler(event)">
+                <div class="row">
+                  <div class="col-md-12">
+                    <select class="form-control btn btn-outline-primary mb-0 " name="search-filter" id="search-filter"
+                      placeholder="Departure" onchange="myFunction2()">
+                      <option selected="">
+                        Search By
+                      </option>
+                      <option>Name</option>
+                      <option>Date</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card mt-4" id="mymember" style="display:none">
+                <div class="card-body px-0 pb-2">
+                  <div class="table-name">Member</div>
+                  <div class="table-responsive">
+                    <table class="table mb-0" id="myTable1">
+                      <thead>
+                        <tr>
+                          <th class="text-left">Name</th>
+                          <th class="text-left">Date</th>
+                          <th class="text-center">In Time</th>
+                          <th class="text-center">Out Time</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {{#each member}}
+                        <tr>
+                          <td>
+                            <div class="d-flex px-2 py-1">
+                              <div>
+                                <img src="../../../uploads/Members/{{this.image}}" class="avatar avatar-sm me-3">
+                              </div>
+                              <div class="d-flex flex-column justify-content-center">
+                                {{this.name}}
+                              </div>
+                            </div>
+                          </td>
+                          <td>{{this.date}}</td>
+                          <td>{{this.in_time}}</td>
+                          <td>{{this.out_time}}</td>
+                        </tr>
+                        {{/each}}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="card mt-4" id="mystaff">
+                <div class="card-body px-0 pb-2">
+                  <div class="table-name">Staff</div>
+                  <div class="table-responsive">
+                    <table class="table mb-0" id="myTable2">
+                      <thead>
+                        <tr>
+                          <th class="text-left">Name</th>
+                          <th class="text-left">Date</th>
+                          <th class="text-center">In Time</th>
+                          <th class="text-center">Out Time</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {{#each staff}}
+                        <tr>
+                          <td>
+                            <div class="d-flex px-2 py-1">
+                              <div>
+                                <img src="../../../uploads/Staff/{{this.image}}" class="avatar avatar-sm me-3">
+                              </div>
+                              <div class="d-flex flex-column justify-content-center">
+                                {{this.name}}
+                              </div>
+                            </div>
+                          </td>
+                          <td>{{this.date}}</td>
+                          <td>{{this.in_time}}</td>
+                          <td>{{this.out_time}}</td>
+                        </tr>
+                        {{/each}}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--main container end-->
+  </div>
+  <!--wrap-sidebar end-->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+
+  <script>
+    let btn = document.querySelector("#btn");
+    let wrap_sidebar = document.querySelector(".wrap-sidebar");
+    btn.onclick = function () {
+      wrap_sidebar.classList.toggle("collllapse");
+    };
+
+  </script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      //jquery for toggle sub menus
+      $(".sub-btn").click(function () {
+        $(this).next(".sub-menu").slideToggle();
+        $(this).find(".drop-down").toggleClass("rotate");
+      });
+
+      $(".sub-btn").click(function () {
+        if ($(this).next(".sub-menu").hasClass("active-now")) {
+          $(this).next(".sub-menu").removeClass("active-now");
+        }
+        else {
+          $(this).next(".sub-menu").addClass("active-now");
+        }
+      });
+    });
+  </script>
+
+  <script>
+
+    var tablename = document.getElementById("myTable2");
+    var check = document.getElementById("togBtn");
+    var tab1 = document.getElementById("mymember");
+    var tab2 = document.getElementById("mystaff");
+    var input, filter, table, tr, td, i, txtValue, search;
+    var date;
+    console.log(date);
+    function handler(e) {
+
+      date = e.target.value;
+      table = tablename;
+      console.log(date);
+      tr = table.getElementsByTagName("tr");
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[1];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          console.log("1");
+          console.log(txtValue);
+          if (txtValue.toUpperCase().indexOf(date) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+
+        }
+      }
+    }
+
+
+    function mytoggle() {
+
+      if (check.checked) {
+        tab1.style.display = "";
+        tab2.style.display = "none";
+        tablename = document.getElementById("myTable1");
+      }
+      else {
+        tab1.style.display = "none";
+        tab2.style.display = "";
+        tablename = document.getElementById("myTable2");
+      }
+    }
+
+    function myFunction() {
+      var input, filter, table, tr, td, i, txtValue, search;
+      search = document.getElementById('search-filter');
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = tablename;
+      tr = table.getElementsByTagName("tr");
+      for (i = 0; i < tr.length; i++) {
+        if (search.value == "Name") {
+          td = tr[i].getElementsByTagName("td")[0];
+          if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              tr[i].style.display = "";
+            } else {
+              tr[i].style.display = "none";
+            }
+          }
+        } else if (search.options[search.selectedIndex].value == "Date") {
+          function mydate() {
+            var date = document.getElementById("date-select").value.toString();
+            // td = tr[i].getElementsByTagName("td")[1];
+            // if (td) {
+            //   txtValue = td.textContent || td.innerText;
+            //   if (txtValue.toUpperCase().indexOf(date) > -1) {
+            //     tr[i].style.display = "";
+            //   } else {
+            //     tr[i].style.display = "none";
+            //   }
+            // }
+          }
+        } else {
+          td = tr[i].getElementsByTagName("td")[0];
+          if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              tr[i].style.display = "";
+            } else {
+              tr[i].style.display = "none";
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+
+  <script>
+    function myFunction2() {
+      var search = document.getElementById('search-filter');
+      var input = document.getElementById("myInput");
+      var date = document.getElementById("date-select");
+      if (search.options[search.selectedIndex].value == "Date") {
+        input.style.display = "none ";
+        date.style.display = "";
+      }
+      else {
+        input.style.display = "";
+        date.style.display = "none ";
+      }
+    }
+  </script>
+
+
+</body>
+
+</html>

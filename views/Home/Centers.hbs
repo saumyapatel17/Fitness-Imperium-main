@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Imperium | Blogs</title>
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/b64e0dbd33.js" crossorigin="anonymous"></script>
+
+    <!-- Css -->
+    <link rel="stylesheet" href="../../public/css/index.css">
+    <link rel="stylesheet" href="../../public/css/scrollbar.css">
+
+
+</head>
+
+<body>
+
+    <!-- Navbar Start -->
+    <div class='navbar'>
+        <a href="/">
+            <div class="navbar-brand">
+                <img src="../public/Images/logo.png" />
+                <span>Fitness Imperium</span>
+            </div>
+        </a>
+
+        <div class="navbar-items">
+
+            <ul>
+
+                <a href="/">
+                    <li class="active">
+                        Home
+                    </li>
+                </a>
+
+                <a href="/blogs">
+                    <li class="active">
+                        Blogs
+                    </li>
+                </a>
+                <a href="/centre">
+                    <li class="active">
+                        Centers
+                    </li>
+                </a>
+                <a href="/login">
+                    <li class="active">
+                        Login
+                    </li>
+                </a>
+                <a href="/register">
+                    <li class="active">
+                        Get Started
+                    </li>
+                </a>
+            </ul>
+            </ul>
+
+        </div>
+
+    </div>
+    <!-- Navbar Ends -->
+
+    <!-- Page Starts -->
+    <section id='page-name'>
+        <div class="page-name">
+            <div>
+                <h1>
+                    Find A GYM
+                </h1>
+                <p>
+                    Search the best GYM for you!!!
+                </p>
+            </div>
+            <div>
+                <h3>Want to Register Your Own Gym?</h3>
+                <a href="/#plans">
+                    <button class="btn">
+                    See Our Plans
+                    </button>
+            </a>
+                
+            </div>
+            
+        </div>
+    </section>
+    <section id='page-window'>
+        <div class="tab-view">
+            <div class="tab-view-search-wrap">
+
+            <input placeholder="Search by Title" />
+            <span class="fas fa-search"></span>
+
+            </div>
+            <div class="tab-view-display">
+                <div class='tab-view-display-grid'>
+
+                    {{#each data}}
+                    
+                        <div class="centers-card">
+                            <a href="" class="centers-card-anchor">
+                                <img src="https://source.unsplash.com/1600x900/?gym" />
+                            </a>
+                            
+            
+                            <div class="centers-card-content">
+                                <div class="centers-card-header">
+                                    <h4>{{this.name}}</h4>
+                                </div>
+
+                                <div class="centers-card-body">
+                                    <div class="centers-card-features">
+                                    <span>
+                                        Feature
+                                    </span>
+                                    <span>
+                                        Feature
+                                    </span>
+                                    <span>
+                                        Feature
+                                    </span>
+                                    <span>
+                                        Feature
+                                    </span>
+                                    <span>
+                                        Feature
+                                    </span>
+                                    <span>
+                                        Feature
+                                    </span>
+                                    </div>
+                                    <div>
+                                        <a href="/portfolio/{{this.center_id}}">
+                                            <button class='btn'>
+                                                View More
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
+            
+                            </div>
+                        </div>
+
+                        {{/each}}
+                  
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+    <!-- Page Ends -->
+
+    <!-- Footer Starts -->
+    <section id='footer'>
+        <div class="footer">
+            <div class="footer-content">
+                <div class="footer-handles">
+                    <a href="">
+                        <span class="fab fa-instagram"></span>
+                    </a>
+                    
+
+                    <a href="">
+                        <span class="fab fa-facebook"></span>
+                    </a>
+                    
+
+                    <a href="">
+                        <span class="fab fa-twitter"></span>
+                    </a>
+                    
+
+                    <a href="">
+                        <span class="fab fa-pinterest"></span>
+                    </a>
+                   
+
+                    <a href="">
+                        <span class="fab fa-google-plus-g"></span>
+                    </a>
+                    
+
+
+
+                </div>
+                <div class="footer-info">
+                    <h3><span class="far fa-copyright"></span> 2021 Fitness Imperium, All rights reserved.</h3>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+    <!-- Footer Ends -->
+
+    <script>
+        const navbar = document.querySelector('.navbar');
+        window.onscroll = () => {
+            if (window.scrollY > 367) {
+                navbar.classList.add('navbar-scroll');
+            }
+            else {
+                navbar.classList.remove('navbar-scroll');
+            }
+        };
+    </script>
+
+</body>
+
+</html>

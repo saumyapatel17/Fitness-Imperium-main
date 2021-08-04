@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/public/css/style.css">
+        <link rel="stylesheet" href="/public/css/pages.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+        <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous"
+      /> 
+        
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    /> -->
+    </head>
+    <body>
+
+         <!--wrap-sidebar start-->
+  <div class="wrap-sidebar">
+    <!--sidebar start-->
+    <div class="sidebar">
+      <div class="sidebar-menu">
+        <div class="sidebar-btn">
+          <i class="fas fa-bars" id="btn"></i>
+        </div>
+        <center class="profile">
+          <img src="1.jpg" alt="">
+        </center>
+        <br><br><br><br><br>
+        <div class="item">
+          <a href="/User/home">
+            <i class="fas fa-desktop"></i><span>Dashboard</span>
+          </a>
+        </div>
+        <div class="item" id="member">
+          <a href="#member" class="sub-btn">
+            <i class="fas fa-users"></i><span>Member <i class="fas fa-angle-right drop-down"></i></span>
+          </a>
+          <div class="sub-menu ">
+            <a href="/User/Member/Add_member"><i class="fas fa-user-plus"></i><span>Add Member</span></a>
+            <a href="/User/Member/View_member"><i class="fas fa-user-edit"></i><span>View Member</span></a>
+            <a href="/User/Member/Manage_subscription"><i class="fas fa-piggy-bank"></i><span>Memberships</span></a>
+          </div>
+        </div>
+        <div class="item " id="staff">
+          <a href="#staff" class="sub-btn">
+            <i class="fas fa-user-tie"></i><span>Staff <i class="fas fa-angle-right drop-down"></i></span>
+          </a>
+          <div class="sub-menu active-now">
+            <a href="/User/Staff/Add_staff" ><i class="fas fa-user-plus"></i><span>Add Staff</span></a>
+            <a href="/User/Staff/View_staff" style="background: #3eca84; color:rgba(0, 0, 0)"><i class="fas fa-user-edit"></i><span>View Staff</span></a>
+            <a href="/User/Staff/View_salary"><i class="fas fa-wallet"></i><span>Salary</span></a>
+          </div>
+        </div>
+        <div class="item" id="attendance">
+          <a href="#attendance" class="sub-btn">
+            <i class="fas fa-calendar"></i><span>Attendance <i class="fas fa-angle-right drop-down"></i></span>
+          </a>
+          <div class="sub-menu">
+            <a href="/User/Attendance/Mark_attendance"><i class="fas fa-calendar-check"></i><span>Mark Attendance</span></a>
+            <a href="/User/Attendance/View_attendance"><i class="fas fa-calendar-day"></i><span>View Attendance</span></a>
+          </div>
+        </div>
+        <div class="item" id="inventory">
+          <a href="#inventory" class="sub-btn">
+            <i class="fas fa-dolly"></i><span>Inventory <i class="fas fa-angle-right drop-down"></i></span>
+          </a>
+          <div class="sub-menu">
+            <a href="/User/Inventory/Add_product"><i class="fas fa-people-carry"></i><span>Add Product</span></a>
+            <a href="/User/Inventory/View_product"><i class="fas fa-box-open"></i><span>View Product</span></a>
+          </div>
+        </div>
+        <div class="item" id="expense">
+          <a href="#expense" class="sub-btn">
+            <i class="fas fa-cash-register"></i><span>Expenses <i class="fas fa-angle-right drop-down"></i></span>
+          </a>
+          <div class="sub-menu">
+            <a href="/User/Expense/Add_expense"><i class="fas fa-donate"></i><span>Add Expense</span></a>
+            <a href="/User/Expense/View_expense"><i class="fas fa-file-invoice-dollar"></i><span>View Expenses</span></a>
+          </div>
+        </div>
+        <div class="item">
+          <a href="../portfolio.hbs" class="sub-btn">
+            <i class="fas fa-portrait"></i><span>Portfolio</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!--sidebar end-->
+    <!--main container start-->
+    <div class="main-container">
+      <nav class="main-nav">
+        <div class="nav-left">
+          <div class="nav-logo">Fitness Imperium</div>
+        </div>
+        <div class="nav-right">
+          <ul>
+            <li>
+              <a href="/User/profile" title="Profile" target="_blank"><i class="fas fa-user-circle"></i>
+                <span class="sr-only">Profile</span></a>
+            </li>
+            <li>
+              <a href="/" title="Log Out" target="_blank"><i class="fas fa-power-off"></i>
+                <span class="sr-only">Log Out</span></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+                  <div class="main-content">
+                    <div class="staff">
+                        <div class="staff__container">
+                        <div class="container-fluid py-4 mb-4">
+                          {{#if info}}
+                                <div class="alert alert-primary">
+
+                                    <div>
+                                        <img src="/public/Images/Alert/info.svg" alt="" style="fill: currentColor;">
+                                        <span>{{info}}</span>
+                                    </div>
+                                    <span class="closebtn"
+                                        onclick="this.parentElement.style.display='none';">&times;</span>
+                                </div>
+                                {{/if}}
+                                {{#if warning}}
+                                <div class="alert alert-warning">
+
+                                    <div>
+                                        <img src="/public/Images/Alert/warning.svg" alt="" style="fill: currentColor;">
+                                        <span>{{warning}}</span>
+                                    </div>
+                                    <span class="closebtn"
+                                        onclick="this.parentElement.style.display='none';">&times;</span>
+                                </div>
+                                {{/if}}
+                                {{#if danger}}
+                                <div class="alert alert-danger">
+
+                                    <div>
+                                        <img src="/public/Images/Alert/danger.svg" alt="" style="fill: currentColor;">
+                                        <span>{{danger}}</span>
+                                    </div>
+                                    <span class="closebtn"
+                                        onclick="this.parentElement.style.display='none';">&times;</span>
+                                </div>
+                                {{/if}}
+                                {{#if success}}
+                                <div class="alert alert-success">
+
+                                    <div>
+                                        <img src="/public/Images/Alert/success.svg" alt="" style="fill: currentColor;">
+                                        <span>{{success}}</span>
+                                    </div>
+                                    <span class="closebtn"
+                                        onclick="this.parentElement.style.display='none';">&times;</span>
+                                </div>
+                                {{/if}}
+                            <div class="input-group">
+                              <span class="input-group-text">
+                                <i class="fas fa-file-pdf"></i>
+                              </span>
+                              <input type="text" class="form-control" placeholder="Search" onkeyup="myFunction()" id="myInput">
+                              <div class="row">
+                                <div class="col-md-12">
+                                  <select
+                                    class="form-control btn btn-outline-primary mb-0 "
+                                    name="search-filter" id="search-filter"
+                                    placeholder="Departure"
+                                  >
+                                    <option selected="">
+                                      Search By
+                                    </option>
+                                    <option >Name</option>
+                                    <option >Email</option>
+                                    <option >Gender</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card mt-4">
+                              <div class="card-body px-0 pb-2">
+                                <div class="table-name">Staff Details</div>
+                                <div class="table-responsive">
+                                  <table class="table mb-0" id="myTable">
+                                    <thead>
+                                      <tr>
+                                        <th class="text-left">Name</th>
+                                        <th class="text-center">Email</th>
+                                        <th class="text-center">Contact</th>
+                                        <th class="text-center">Gender</th>
+                                        <th class="text-center">Job Profile</th>
+                                        <th></th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      {{#each data}}
+                                      <tr>
+                                        <td>
+                                          <div class="d-flex px-2 py-1">
+                                            <div>
+                                              <img src="../../../uploads/Staff/{{this.image}}" class="avatar avatar-sm me-3">
+                                            </div>
+                                            <div class="d-flex flex-column justify-content-center">
+                                              {{this.name}}
+                                            </div>
+                                          </div>
+                                        </td>
+                                        <td>{{this.email}}</td>
+                                        <td>{{this.contact}}</td>
+                                        <td>{{this.gender}}</td>
+                                        <td>{{this.type}}</td>
+                                        <td><a href="#" title="Send Salary" ><i class="fas fa-file-pdf"></i> <span class="sr-only">Send Salary</span></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="Add_staff.hbs" title="Edit Staff Details" ><i class="fas fa-file-pdf"></i> <span class="sr-only">Edit Staff Details</span></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#" title="Delete" ><i class="fas fa-file-pdf"></i> <span class="sr-only">Delete</span></a></td>
+                                      </tr>
+                                      {{/each}}
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+            </div>
+            <!--main container end-->
+        </div>
+        <!--wrap-sidebar end-->
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+        
+        <script>
+        let btn = document.querySelector("#btn");
+        let wrap_sidebar = document.querySelector(".wrap-sidebar");
+        btn.onclick = function () {
+            wrap_sidebar.classList.toggle("collllapse");
+        };
+
+        </script>
+
+<script type="text/javascript">
+  $(document).ready(function () {
+    //jquery for toggle sub menus
+    $(".sub-btn").click(function () {
+      $(this).next(".sub-menu").slideToggle();
+      $(this).find(".drop-down").toggleClass("rotate");
+    });
+
+    $(".sub-btn").click(function () {
+      if ($(this).next(".sub-menu").hasClass("active-now")){
+        $(this).next(".sub-menu").removeClass("active-now");
+      }
+      else{
+        $(this).next(".sub-menu").addClass("active-now");
+      }
+    });
+  });
+</script>
+<script>
+  function myFunction() {
+    var input, filter, table, tr, td, i, txtValue, search;
+    search = document.getElementById('search-filter');
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+      if (search.value == "Name") {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      } else if (search.value == "Email") {
+        td = tr[i].getElementsByTagName("td")[1];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      } else if (search.value == "Gender") {
+        td = tr[i].getElementsByTagName("td")[3];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      } else {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    }
+  }
+</script>
+
+    </body>
+</html>
+      

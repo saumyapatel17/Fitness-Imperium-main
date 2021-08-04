@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/public/css/style.css">
+        <link rel="stylesheet" href="/public/css/pages.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+        <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <style>
+          #overlay {
+            position: fixed;
+            display: none;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 2;
+            cursor: pointer;
+          }
+          
+          #text{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: 50px;
+            color: white;
+            transform: translate(-50%,-50%);
+            -ms-transform: translate(-50%,-50%);
+          }
+          </style>
+    </head>
+    <body>
+        <!--wrap-sidebar start-->
+        <div class="wrap-sidebar" style="filter: blur(5px);">
+            <!--sidebar start-->
+            <div class="sidebar">
+                <div class="sidebar-menu">
+                    <div class="sidebar-btn">
+                        <i class="fas fa-bars" id="btn"></i>
+                    </div>
+                    <center class="profile">
+                        <img src="1.jpg" alt="">
+                    </center>
+                    <br><br><br><br><br>
+                    <div class="item">
+                        <a href="/User/home" style="background: #3eca84; color:rgba(0, 0, 0)">
+                            <i class="fas fa-desktop"></i><span>Dashboard</span>
+                        </a>
+                      </div>
+                    <div class="item" id="member">
+                        <a href="#member" class="sub-btn">
+                            <i class="fas fa-users"></i><span>Member <i class="fas fa-angle-right drop-down"></i></span>
+                        </a>
+                        <div class="sub-menu ">
+                          <a href="/User/Member/Add_member"><i class="fas fa-user-plus"></i><span>Add Member</span></a>
+                          <a href="/User/Member/View_member"><i class="fas fa-user-edit"></i><span>View Member</span></a>
+                          <a href="/User/Member/Manage_subscription"><i class="fas fa-piggy-bank"></i><span>Memberships</span></a>
+                      </div>
+                      </div>
+                    <div class="item" id="staff">
+                        <a href="#staff" class="sub-btn">
+                            <i class="fas fa-user-tie"></i><span>Staff <i class="fas fa-angle-right drop-down"></i></span>
+                        </a>
+                        <div class="sub-menu">
+                          <a href="/User/Staff/Add_staff"><i class="fas fa-user-plus"></i><span>Add Staff</span></a>
+                          <a href="/User/Staff/View_staff"><i class="fas fa-user-edit"></i><span>View Staff</span></a>
+                          <a href="/User/Staff/View_salary"><i class="fas fa-wallet"></i><span>Salary</span></a>
+                      </div>
+                      </div>
+                    <div class="item" id="attendance">
+                        <a href="#attendance" class="sub-btn">
+                            <i class="fas fa-calendar"></i><span>Attendance <i class="fas fa-angle-right drop-down"></i></span>
+                        </a>
+                        <div class="sub-menu">
+                          <a href="/User/Attendance/Mark_attendance"><i class="fas fa-calendar-check"></i><span>Mark Attendance</span></a>
+                          <a href="/User/Attendance/View_attendance"><i class="fas fa-calendar-day"></i><span>View Attendance</span></a>
+                      </div>
+                    </div>
+                    <div class="item" id="inventory">
+                        <a href="#inventory" class="sub-btn">
+                            <i class="fas fa-dolly"></i><span>Inventory <i class="fas fa-angle-right drop-down"></i></span>
+                        </a>
+                        <div class="sub-menu">
+                          <a href="/User/Inventory/Add_product"><i class="fas fa-people-carry"></i><span>Add Product</span></a>
+                          <a href="/User/Inventory/View_product"><i class="fas fa-box-open"></i><span>View Product</span></a>
+                      </div>
+                    </div>
+                    <div class="item" id="expense">
+                        <a href="#expense" class="sub-btn">
+                            <i class="fas fa-cash-register"></i><span>Expenses <i class="fas fa-angle-right drop-down"></i></span>
+                        </a>
+                        <div class="sub-menu">
+                            <a href="/User/Expense/Add_expense"><i class="fas fa-donate"></i><span>Add Expense</span></a>
+                            <a href="/User/Expense/View_expense"><i class="fas fa-file-invoice-dollar"></i><span>View Expenses</span></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <a href="portfolio.hbs" class="sub-btn">
+                            <i class="fas fa-portrait"></i><span>Portfolio</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!--sidebar end-->
+            <!--main container start-->
+            <div class="main-container">
+                <nav class="main-nav">
+                    <div class="nav-left">
+                      <div class="nav-logo">Fitness Imperium</div>
+                    </div>
+                    <div class="nav-right">
+                      <ul>
+                        <li>
+                          <a href="/User/profile" title="Profile" target="_blank"
+                            ><i class="fas fa-user-circle"></i>
+                            <span class="sr-only">Profile</span></a
+                          >
+                        </li>
+                        <li>
+                          <a href="/" title="Log Out" target="_blank"
+                            ><i class="fas fa-power-off"></i>
+                            <span class="sr-only">Log Out</span></a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </nav>
+                  <div class="main-content">
+                    <div class="home" >
+                      </div>
+                  </div>
+            </div>
+            <!--main container end-->
+        </div>
+        <!--wrap-sidebar end-->
+        <div id="overlay" style="display:block;">
+          <div id="text">{{text}}<br>
+            <div>{{text2}}</div>
+            <a href="/User/profile"><button class="btn btn-outline-primary btn-sm mb-0 mt-4" type="button" >Back to Home</button></a>
+          </div>
+        </div>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+        
+        <script>
+        let btn = document.querySelector("#btn");
+        let wrap_sidebar = document.querySelector(".wrap-sidebar");
+        btn.onclick = function () {
+            wrap_sidebar.classList.toggle("collllapse");
+        };
+
+        </script>
+
+<script type="text/javascript">
+  $(document).ready(function () {
+    //jquery for toggle sub menus
+    $(".sub-btn").click(function () {
+      $(this).next(".sub-menu").slideToggle();
+      $(this).find(".drop-down").toggleClass("rotate");
+    });
+
+    $(".sub-btn").click(function () {
+      if ($(this).next(".sub-menu").hasClass("active-now")){
+        $(this).next(".sub-menu").removeClass("active-now");
+      }
+      else{
+        $(this).next(".sub-menu").addClass("active-now");
+      }
+    });
+  });
+</script>
+
+    </body>
+</html>
+      

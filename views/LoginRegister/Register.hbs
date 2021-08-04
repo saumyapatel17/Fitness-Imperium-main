@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Imperium | Get Started</title>
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/b64e0dbd33.js" crossorigin="anonymous"></script>
+
+    <!-- Css -->
+    <link rel="stylesheet" href="../../public/css/index.css">
+    <link rel="stylesheet" href="../../public/css/scrollbar.css">
+
+
+</head>
+
+<body>
+    <section id='page-name'>
+        <div class="page-name">
+            <div>
+                <h1>
+                    My Account
+                </h1>
+                <p>
+                    Welcome to the family!
+                </p>
+            </div>
+            <div>
+                <h3>Already have an account?</h3>
+                <a href="/login">
+                    <button class="btn">
+                        Login
+                    </button>
+                </a>
+
+            </div>
+
+        </div>
+    </section>
+    <section id='page-window'>
+        <div class="credentials-form">
+
+            <div class="credentials-form-grid">
+                <img src="../../public/Images/Credentials/Register.svg" alt="">
+
+                <div class="credentials-form-content">
+
+                    <div class="credentials">
+                        <img src='../../public/Images/Avatars/Artboards_Diversity_Avatars_by_Netguru-34.svg' />
+                        <h1>Get Started</h1>
+
+
+                        <form action="/auth/register" method="POST" class="credentials-form">
+                            <label>
+                                Center
+                            </label>
+                            <div class="credentials-form-input-div">
+                                <div>
+                                    <span class="fas fa-at">
+                                    </span>
+                                </div>
+                                <div>
+                                    <input placeholder="Enter Center Name" type="text" name="name" />
+                                </div>
+                            </div>
+                                <label>
+                                    Email
+                                </label>
+                                <div class="credentials-form-input-div">
+                                    <div>
+                                        <span class="fas fa-at">
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <input placeholder="Enter your Email" type="email" name="email" />
+                                    </div>
+
+
+                                </div>
+
+                                <label>
+                                    Username
+                                </label>
+                                <div class="credentials-form-input-div">
+                                    <div>
+                                        <span class="fas fa-at">
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <input placeholder="Make Username of your Choice" type="username"
+                                            name="username" />
+                                    </div>
+
+
+                                </div>
+
+                                <label>
+                                    Password
+                                </label>
+                                <div class="credentials-form-input-div pass">
+                                    <div>
+                                        <span class="fas fa-lock"></span>
+                                    </div>
+
+                                    <input placeholder="Enter your Password" type="Password" id="register-password"
+                                        name="password" />
+                                    <div>
+                                        <span class="far fa-eye" id="register-eye-toggle"></span>
+                                        <span class="far fa-eye-slash" id="register-eye-toggle-slash"></span>
+                                    </div>
+                                </div>
+                                <label>
+                                    Confirm Password
+                                </label>
+                                <div class="credentials-form-input-div pass">
+                                    <div>
+                                        <span class="fas fa-lock"></span>
+                                    </div>
+
+                                    <input placeholder="Enter your Password" type="Password" id="register-c-password"
+                                        name="confirmpassword" />
+                                    <div>
+                                        <span class="far fa-eye" id="register-c-eye-toggle"></span>
+                                        <span class="far fa-eye-slash" id="register-c-eye-toggle-slash"></span>
+                                    </div>
+                                </div>
+                                {{#if info}}
+                                <div class="alert alert-primary">
+
+                                    <div>
+                                        <img src="/public/Images/Alert/info.svg" alt="" style="fill: currentColor;">
+                                        <span>{{info}}</span>
+                                    </div>
+                                    <span class="closebtn"
+                                        onclick="this.parentElement.style.display='none';">&times;</span>
+                                </div>
+                                {{/if}}
+                                {{#if warning}}
+                                <div class="alert alert-warning">
+
+                                    <div>
+                                        <img src="/public/Images/Alert/warning.svg" alt="" style="fill: currentColor;">
+                                        <span>{{warning}}</span>
+                                    </div>
+                                    <span class="closebtn"
+                                        onclick="this.parentElement.style.display='none';">&times;</span>
+                                </div>
+                                {{/if}}
+                                {{#if danger}}
+                                <div class="alert alert-danger">
+
+                                    <div>
+                                        <img src="/public/Images/Alert/danger.svg" alt="" style="fill: currentColor;">
+                                        <span>{{danger}}</span>
+                                    </div>
+                                    <span class="closebtn"
+                                        onclick="this.parentElement.style.display='none';">&times;</span>
+                                </div>
+                                {{/if}}
+                                {{#if success}}
+                                <div class="alert alert-success">
+
+                                    <div>
+                                        <img src="/public/Images/Alert/success.svg" alt="" style="fill: currentColor;">
+                                        <span>{{success}}</span>
+                                    </div>
+                                    <span class="closebtn"
+                                        onclick="this.parentElement.style.display='none';">&times;</span>
+                                </div>
+                                {{/if}}
+
+                                <button class="btn" type="submit">
+                                    Sign Up
+                                </button>
+                        </form>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </section>
+    <!-- Footer Starts -->
+    <section id='footer'>
+        <div class="footer">
+            <div class="footer-content">
+                <div class="footer-handles">
+                    <a href="">
+                        <span class="fab fa-instagram"></span>
+                    </a>
+
+
+                    <a href="">
+                        <span class="fab fa-facebook"></span>
+                    </a>
+
+
+                    <a href="">
+                        <span class="fab fa-twitter"></span>
+                    </a>
+
+
+                    <a href="">
+                        <span class="fab fa-pinterest"></span>
+                    </a>
+
+
+                    <a href="">
+                        <span class="fab fa-google-plus-g"></span>
+                    </a>
+
+
+
+
+                </div>
+                <div class="footer-info">
+                    <h3><span class="far fa-copyright"></span> 2021 Fitness Imperium, All rights reserved.</h3>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+    <!-- Footer Ends -->
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+    <script>
+
+        const eyeToggleSlash = document.querySelector("#register-eye-toggle-slash");
+        const eyeToggle = document.querySelector("#register-eye-toggle");
+        const password = document.querySelector('#register-password');
+
+        eyeToggleSlash.addEventListener('click', function () {
+            password.setAttribute('type', 'text')
+            eyeToggleSlash.style.visibility = "hidden";
+            eyeToggle.style.visibility = "visible";
+            console.log("i m here")
+        });
+
+        eyeToggle.addEventListener('click', function () {
+            password.setAttribute('type', 'password')
+            eyeToggleSlash.style.visibility = "visible";
+            eyeToggle.style.visibility = "hidden";
+        });
+
+        const eyeToggleSlashC = document.querySelector("#register-c-eye-toggle-slash");
+        const eyeToggleC = document.querySelector("#register-c-eye-toggle");
+        const passwordC = document.querySelector('#register-c-password');
+
+        eyeToggleSlashC.addEventListener('click', function () {
+            passwordC.setAttribute('type', 'text')
+            eyeToggleSlashC.style.visibility = "hidden";
+            eyeToggleC.style.visibility = "visible";
+        });
+
+        eyeToggleC.addEventListener('click', function () {
+            passwordC.setAttribute('type', 'password')
+            eyeToggleSlashC.style.visibility = "visible";
+            eyeToggleC.style.visibility = "hidden";
+        });
+    </script>
+</body>
+
+</html>

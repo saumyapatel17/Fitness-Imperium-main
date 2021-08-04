@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/public/css/style.css">
+  <link rel="stylesheet" href="/public/css/pages.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+  <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+
+  <!--wrap-sidebar start-->
+  <div class="wrap-sidebar">
+    <!--sidebar start-->
+    <div class="sidebar">
+      <div class="sidebar-menu">
+        <div class="sidebar-btn">
+          <i class="fas fa-bars" id="btn"></i>
+        </div>
+        <center class="profile">
+          <img src="1.jpg" alt="">
+        </center>
+        <br><br><br><br><br>
+        <div class="item">
+          <a href="/User/home" style="background: #3eca84; color:rgba(0, 0, 0)">
+            <i class="fas fa-desktop"></i><span>Dashboard</span>
+          </a>
+        </div>
+        <div class="item" id="member">
+          <a href="#member" class="sub-btn">
+            <i class="fas fa-users"></i><span>Member <i class="fas fa-angle-right drop-down"></i></span>
+          </a>
+          <div class="sub-menu ">
+            <a href="/User/Member/Add_member"><i class="fas fa-user-plus"></i><span>Add Member</span></a>
+            <a href="/User/Member/View_member"><i class="fas fa-user-edit"></i><span>View Member</span></a>
+            <a href="/User/Member/Manage_subscription"><i class="fas fa-piggy-bank"></i><span>Memberships</span></a>
+          </div>
+        </div>
+        <div class="item" id="staff">
+          <a href="#staff" class="sub-btn">
+            <i class="fas fa-user-tie"></i><span>Staff <i class="fas fa-angle-right drop-down"></i></span>
+          </a>
+          <div class="sub-menu">
+            <a href="/User/Staff/Add_staff"><i class="fas fa-user-plus"></i><span>Add Staff</span></a>
+            <a href="/User/Staff/View_staff"><i class="fas fa-user-edit"></i><span>View Staff</span></a>
+            <a href="/User/Staff/View_salary"><i class="fas fa-wallet"></i><span>Salary</span></a>
+          </div>
+        </div>
+        <div class="item" id="attendance">
+          <a href="#attendance" class="sub-btn">
+            <i class="fas fa-calendar"></i><span>Attendance <i class="fas fa-angle-right drop-down"></i></span>
+          </a>
+          <div class="sub-menu">
+            <a href="/User/Attendance/Mark_attendance"><i class="fas fa-calendar-check"></i><span>Mark
+                Attendance</span></a>
+            <a href="/User/Attendance/View_attendance"><i class="fas fa-calendar-day"></i><span>View
+                Attendance</span></a>
+          </div>
+        </div>
+        <div class="item" id="inventory">
+          <a href="#inventory" class="sub-btn">
+            <i class="fas fa-dolly"></i><span>Inventory <i class="fas fa-angle-right drop-down"></i></span>
+          </a>
+          <div class="sub-menu">
+            <a href="/User/Inventory/Add_product"><i class="fas fa-people-carry"></i><span>Add Product</span></a>
+            <a href="/User/Inventory/View_product"><i class="fas fa-box-open"></i><span>View Product</span></a>
+          </div>
+        </div>
+        <div class="item" id="expense">
+          <a href="#expense" class="sub-btn">
+            <i class="fas fa-cash-register"></i><span>Expenses <i class="fas fa-angle-right drop-down"></i></span>
+          </a>
+          <div class="sub-menu">
+            <a href="/User/Expense/Add_expense"><i class="fas fa-donate"></i><span>Add Expense</span></a>
+            <a href="/User/Expense/View_expense"><i class="fas fa-file-invoice-dollar"></i><span>View
+                Expenses</span></a>
+          </div>
+        </div>
+        <div class="item">
+          <a href="portfolio.hbs" class="sub-btn">
+            <i class="fas fa-portrait"></i><span>Portfolio</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!--sidebar end-->
+    <!--main container start-->
+    <div class="main-container">
+      <nav class="main-nav">
+        <div class="nav-left">
+          <div class="nav-logo">Fitness Imperium</div>
+        </div>
+        <div class="nav-right">
+          <ul>
+            <li>
+              <a href="/User/profile" title="Profile" target="_blank"><i class="fas fa-user-circle"></i>
+                <span class="sr-only">Profile</span></a>
+            </li>
+            <li>
+              <a href="/" title="Log Out" target="_blank"><i class="fas fa-power-off"></i>
+                <span class="sr-only">Log Out</span></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="main-content">
+        <div class="home">
+          <div class="home__container">
+            <div class="container-fluid mb-4">
+              <div class="row">
+                <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+                  <div class="card card-shadow">
+                    <div class="card-body p-3">
+                      <div class="row">
+                        <div class="col-8">
+                          <p class="dashboard-card-heading">Members</p>
+                          <h3 class="dashboard-card-value">{{membercount}}</h3>
+                          <div class="row">
+                            <div class="col-md-6 text-left">
+                              <p>Men</p>
+                              <h6>{{malecount}}</h6>
+                            </div>
+                            <div class="col-md-6 text-right">
+                              <p>Women</p>
+                              <h6>{{femalecount}}</h6>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-4">
+                          <i class="fas fa-venus-mars"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+                  <div class="card">
+                    <div class="card-body p-3">
+                      <div class="row">
+                        <div class="col-8">
+                          <p class="dashboard-card-heading">Staff</p>
+                          <h3 class="dashboard-card-value">{{staffcount}}</h3>
+                        </div>
+                        <div class="col-4">
+                          <i class="fas fa-user-tie"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+                  <div class="card">
+                    <div class="card-body p-3">
+                      <div class="row">
+                        <div class="col-8">
+                          <p class="dashboard-card-heading">Inventory Items</p>
+                          <h3 class="dashboard-card-value">{{inventorycount}}</h3>
+                        </div>
+                        <div class="col-4">
+                          <i class="fas fa-boxes"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-sm-6">
+                  <div class="card">
+                    <div class="card-body p-3">
+                      <div class="row">
+                        <div class="col-8">
+                          <p class="dashboard-card-heading">Monthly Registrations</p>
+                          <h3 class="dashboard-card-value">{{subscriptioncount}}</h3>
+                        </div>
+                        <div class="col-4">
+                          <i class="fas fa-chart-line"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xl-6 col-sm-6 mb-xl-0 mb-4 mt-4">
+                  <div class="card">
+                    <div class="card-body px-0 pb-2">
+                      <div class="table-name">Expiring Memberships</div>
+                      <div class="table-responsive">
+                        <table class="table mb-0">
+                          <thead>
+                            <tr>
+                              <th class="text-left">Name</th>
+                              <th class="text-center">Email</th>
+                              <th class="text-center">Contact</th>
+                              <th class="text-center">Ending Date</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {{#each expiring}}
+                            <tr>
+                              <td>
+                                <div class="d-flex px-2 py-1">
+                                  <div>
+                                    <img src="../../uploads/Members/{{this.image}}" class="avatar avatar-sm me-3">
+                                  </div>
+                                  <div class="d-flex flex-column justify-content-center">
+                                    {{this.name}}
+                                  </div>
+                                </div>
+                              </td>
+                              <td>{{this.email}}</td>
+                              <td>{{this.contact}}</td>
+                              <td>{{this.ending_date}}</td>
+                            </tr>
+                            {{/each}}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-6 col-sm-6 mb-xl-0 mb-4 mt-4">
+                  <div class="card">
+                    <div class="card-body px-0 pb-2">
+                      <div class="table-name">Overdiew Memberships</div>
+                      <div class="table-responsive">
+                        <table class="table mb-0">
+                          <thead>
+                            <tr>
+                              <th class="text-left">Name</th>
+                              <th class="text-center">Email</th>
+                              <th class="text-center">Contact</th>
+                              <th class="text-center">Ending date</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {{#each ended}}
+                            <tr>
+                              <td>
+                                <div class="d-flex px-2 py-1">
+                                  <div>
+                                    <img src="../../uploads/Members/{{this.image}}" class="avatar avatar-sm me-3">
+                                  </div>
+                                  <div class="d-flex flex-column justify-content-center">
+                                    {{this.name}}
+                                  </div>
+                                </div>
+                              </td>
+                              <td>{{this.email}}</td>
+                              <td>{{this.contact}}</td>
+                              <td>{{this.ending_date}}</td>
+                            </tr>
+                            {{/each}}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--main container end-->
+  </div>
+  <!--wrap-sidebar end-->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+
+  <script>
+    let btn = document.querySelector("#btn");
+    let wrap_sidebar = document.querySelector(".wrap-sidebar");
+    btn.onclick = function () {
+      wrap_sidebar.classList.toggle("collllapse");
+    };
+
+  </script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      //jquery for toggle sub menus
+      $(".sub-btn").click(function () {
+        $(this).next(".sub-menu").slideToggle();
+        $(this).find(".drop-down").toggleClass("rotate");
+      });
+
+      $(".sub-btn").click(function () {
+        if ($(this).next(".sub-menu").hasClass("active-now")) {
+          $(this).next(".sub-menu").removeClass("active-now");
+        }
+        else {
+          $(this).next(".sub-menu").addClass("active-now");
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Imperium | Blogs</title>
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/b64e0dbd33.js" crossorigin="anonymous"></script>
+
+    <!-- Css -->
+    <link rel="stylesheet" href="../../public/css/index.css">
+    <link rel="stylesheet" href="../../public/css/scrollbar.css">
+
+
+</head>
+
+<body>
+
+    <!-- Navbar Start -->
+    <div class='navbar'>
+        <a href="/">
+            <div class="navbar-brand">
+                <img src="../public/Images/logo.png" />
+                <span>Fitness Imperium</span>
+            </div>
+        </a>
+
+        <div class="navbar-items">
+
+            <ul>
+
+                <a href="/">
+                    <li class="active">
+                        Home
+                    </li>
+                </a>
+
+                <a href="#">
+                    <li class="active">
+                        Blogs
+                    </li>
+                </a>
+                <a href="/centre">
+                    <li class="active">
+                        Centers
+                    </li>
+                </a>
+                <a href="/login">
+                    <li class="active">
+                        Login
+                    </li>
+                </a>
+                <a href="/register">
+                    <li class="active">
+                        Get Started
+                    </li>
+                </a>
+            </ul>
+            </ul>
+
+        </div>
+
+    </div>
+    <!-- Navbar Ends -->
+
+    <!-- Page Starts -->
+    <section id='page-name'>
+        <div class="page-name">
+            <div>
+                <h1>
+                    Our Blogs
+                </h1>
+                <p>
+                    Everything latest about fitness is here!!
+                </p>
+            </div>
+            <!-- <div>
+                <h3>Worried of not having an account?</h3>
+                <a href="">
+                    <button class="btn">
+                    Get Started For Free
+                    </button>
+            </a>
+                
+            </div> -->
+
+        </div>
+    </section>
+    <section id='page-window'>
+        <div class="tab-view">
+            <div class="tab-view-search-wrap">
+
+                <span class="fas fa-search"></span>
+                <input placeholder="Search by Title" />
+
+                <div class="tab-view-search-filter">
+                    <select class=" btn" name="search-filter" id="search-filter" placeholder="Filter">
+                        <option selected="">
+                            Search By
+                        </option>
+                        <option>Title</option>
+                        <option>Author</option>
+                        <option>Date</option>
+                    </select>
+
+                </div>
+
+            </div>
+            <div class="tab-view-display">
+                <div class='tab-view-display-grid'>
+
+                    <!-- Blogs Item Starts -->
+                    {{#each data}}
+                    <div class="blogs-card">
+                        <a href="/blogsdetails/{{this.blog_id}}" class="blogs-card-anchor" target="_blank">
+                            <img src="../uploads/Blogs/{{this.image}}" />
+                        </a>
+
+                        <div class="blogs-card-content">
+                            <div class="blogs-card-header">
+                                <h3>{{this.title}}</h3>
+                                <div>
+                                    <span>{{this.author}}</span>
+                                    <span>{{this.date}}</span>
+                                </div>
+                            </div>
+                            <div class="blogs-card-body">
+                                <div>
+                                    <p>
+                                        {{this.content}}
+                                    </p>
+                                </div>
+                                <div>
+                                    <a href="/blogsdetails/{{this.blog_id}}" target="_blank">
+                                        Read More
+                                    </a>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    {{/each}}
+                    <!-- Blogs Item Ends -->
+
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+    <!-- Page Ends -->
+
+    <!-- Footer Starts -->
+    <section id='footer'>
+        <div class="footer">
+            <div class="footer-content">
+                <div class="footer-handles">
+                    <a href="">
+                        <span class="fab fa-instagram"></span>
+                    </a>
+
+
+                    <a href="">
+                        <span class="fab fa-facebook"></span>
+                    </a>
+
+
+                    <a href="">
+                        <span class="fab fa-twitter"></span>
+                    </a>
+
+
+                    <a href="">
+                        <span class="fab fa-pinterest"></span>
+                    </a>
+
+
+                    <a href="">
+                        <span class="fab fa-google-plus-g"></span>
+                    </a>
+
+
+
+
+                </div>
+                <div class="footer-info">
+                    <h3><span class="far fa-copyright"></span> 2021 Fitness Imperium, All rights reserved.</h3>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+    <!-- Footer Ends -->
+
+
+
+    <script>
+        const navbar = document.querySelector('.navbar');
+        window.onscroll = () => {
+            if (window.scrollY > 367) {
+                navbar.classList.add('navbar-scroll');
+            }
+            else {
+                navbar.classList.remove('navbar-scroll');
+            }
+        };
+    </script>
+
+</body>
+
+</html>

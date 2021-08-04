@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Imperium | OTP</title>
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/b64e0dbd33.js" crossorigin="anonymous"></script>
+
+    <!-- Css -->
+    <link rel="stylesheet" href="../../public/css/index.css">
+
+
+</head>
+
+<body>
+    <section id='page-name'>
+        <div class="page-name">
+            <div>
+                <h1>
+                    OTP?
+                </h1>
+                <p>
+                    We take 5-30 seconds to reach you!
+                </p>
+            </div>
+            <div>
+                <h3>Didn't Get the OTP?</h3>
+                <a href="">
+                    <button class="btn">
+                    Resend
+                    </button>
+            </a>
+                
+            </div>
+            
+        </div>
+    </section>
+    <section id='page-window'>
+        <div class="credentials-form">
+
+            <div class="credentials-form-grid">
+                <img src="../../public/Images/Credentials/Login.svg" alt="" >
+
+                <div class="credentials-form-content">
+                    
+                        <div class="credentials">
+                            <img src='../../public/Images/Avatars/Artboards_Diversity_Avatars_by_Netguru-34.svg'/>
+                            <h1>OTP</h1>
+                            
+                
+                            <form action="/auth/authentication" method="POST" class="credentials-form">
+                                    <label>
+                                        OTP
+                                    </label>
+                                    <div class="credentials-form-input-div">
+                                        <div>
+                                            <span class="fas fa-at">
+                                            </span>
+                                        </div>
+                                        <div>
+                                            <input placeholder="Enter your OTP" type="text" name="otp" />
+                                        </div>
+                                        
+
+                                    </div>
+                                    
+                                   {{#if info}}
+				<div class="alert alert-primary">
+					
+					<div>
+						<img src="/public/Images/Alert/info.svg" alt="" style="fill: currentColor;">
+						<span>{{info}}</span>
+					</div>
+					<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+				</div>
+				{{/if}}
+				{{#if warning}}
+				<div class="alert alert-warning">
+					
+					<div>
+						<img src="/public/Images/Alert/warning.svg" alt="" style="fill: currentColor;">
+						<span>{{warning}}</span>
+					</div>
+					<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+				</div>
+				{{/if}}
+				{{#if danger}}
+				<div class="alert alert-danger">
+					
+					<div>
+						<img src="/public/Images/Alert/danger.svg" alt="" style="fill: currentColor;">
+						<span>{{danger}}</span>
+					</div>
+					<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+				</div>
+				{{/if}}
+                {{#if success}}
+				<div class="alert alert-success">
+					
+					<div>
+						<img src="/public/Images/Alert/success.svg" alt="" style="fill: currentColor;">
+						<span>{{success}}</span>
+					</div>
+					<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+				</div>
+				{{/if}}
+                                    <button class="btn" type="submit">
+                                        Autenticate
+                                    </button>
+                                </form>
+
+                        </div>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </section>
+    <!-- Footer Starts -->
+    <section id='footer'>
+        <div class="footer">
+            <div class="footer-content">
+                <div class="footer-handles">
+                    <a href="">
+                        <span class="fab fa-instagram"></span>
+                    </a>
+                    
+
+                    <a href="">
+                        <span class="fab fa-facebook"></span>
+                    </a>
+                    
+
+                    <a href="">
+                        <span class="fab fa-twitter"></span>
+                    </a>
+                    
+
+                    <a href="">
+                        <span class="fab fa-pinterest"></span>
+                    </a>
+                   
+
+                    <a href="">
+                        <span class="fab fa-google-plus-g"></span>
+                    </a>
+                    
+
+
+
+                </div>
+                <div class="footer-info">
+                    <h3><span class="far fa-copyright"></span> 2021 Fitness Imperium, All rights reserved.</h3>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+    <!-- Footer Ends -->
+</body>
+
+</html>
